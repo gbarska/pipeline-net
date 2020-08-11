@@ -1,6 +1,6 @@
 pipeline {
 
-    agent any
+  agent any
     
   environment {
     registry = "gbarska/pipeline-project:$BUILD_TAG"
@@ -43,7 +43,7 @@ pipeline {
       }
     }
 
-    stage('Deploy docker Image') {
+    stage('Push docker Image') {
       steps{ 
           script {
               docker.withRegistry( '', registryCredential ) {
